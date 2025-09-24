@@ -56,7 +56,9 @@ export class TelegramModule {
   private static createAsyncOptionsProvider(
     options: TelegramModuleAsyncOptions,
   ): Provider {
+
     if (options.useFactory) {
+
       return {
         provide: TELEGRAM_MODULE_OPTIONS,
         useFactory: options.useFactory,
