@@ -1,4 +1,4 @@
-import { DynamicModule, Module, Provider } from '@nestjs/common';
+import { DynamicModule, Module, Provider, Type } from '@nestjs/common';
 import { HttpModule } from '@nestjs/axios';
 import {
   TelegramModuleAsyncOptions,
@@ -26,23 +26,31 @@ export class TelegramModule {
     return {
       module: TelegramModule,
       imports: options.imports || [],
-      providers: this.createAsyncProvider(options),
+      providers: this.createAsyncProviders(options),
+      exports: [TelegramService],
     };
   }
 
-  private static createAsyncProvider(
+  private static createAsyncProviders(
     options: TelegramModuleAsyncOptions,
   ): Provider[] {
     if (options.useExisting || options.useFactory) {
       return [this.createAsyncOptionsProvider(options)];
     }
-    return [
-      this.createAsyncOptionsProvider(options),
-      {
-        provide: options.useClass,
-        useClass: options.useClass,
-      },
-    ];
+
+    if (options.useClass) {
+      return [
+        this.createAsyncOptionsProvider(options),
+        {
+          provide: options.useClass,
+          useClass: options.useClass,
+        },
+      ];
+    }
+
+    throw new Error(
+      'Invalid configuration: one of useExisting, useFactory, or useClass must be defined',
+    );
   }
 
   private static createAsyncOptionsProvider(
@@ -55,11 +63,19 @@ export class TelegramModule {
         inject: options.inject || [],
       };
     }
+
+    const inject: Type<TelegramOptionsFactory>[] = [];
+    if (options.useExisting) {
+      inject.push(options.useExisting);
+    } else if (options.useClass) {
+      inject.push(options.useClass);
+    }
+
     return {
       provide: TELEGRAM_MODULE_OPTIONS,
       useFactory: async (optionsFactory: TelegramOptionsFactory) =>
         await optionsFactory.createTelegramOptions(),
-      inject: [options.useExisting || options.useClass],
+      inject,
     };
   }
 }
