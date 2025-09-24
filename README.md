@@ -39,3 +39,4 @@ Contributions are welcome!
 ## 📜 License
 
 Apache License 2.0 with additional restrictions.  
+

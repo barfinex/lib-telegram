@@ -58,7 +58,6 @@ export class TelegramModule {
   ): Provider {
 
     if (options.useFactory) {
-
       return {
         provide: TELEGRAM_MODULE_OPTIONS,
         useFactory: options.useFactory,
