@@ -23,6 +23,19 @@
     "clean": "rimraf dist",
     "release": "semantic-release"
   },
+  "keywords": [
+    "nestjs",
+    "nestjs-module",
+    "nestjs-telegram",
+    "telegram",
+    "telegram-bot",
+    "telegram-api",
+    "telegram-bot-api",
+    "barfinex",
+    "messaging",
+    "bot",
+    "typescript"
+  ],
   "peerDependencies": {
     "@nestjs/common": "^10.0.0",
     "@nestjs/axios": "^3.0.0",
