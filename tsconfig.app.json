@@ -1,31 +1,34 @@
 {
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "target": "ES2020",
     "module": "CommonJS",
     "declaration": true,
     "emitDeclarationOnly": false,
-    "declarationDir": "./dist",
-    "rootDir": "./src",
-    "outDir": "../../dist/libs/telegram",
-    "tsBuildInfoFile": "../../dist/libs/telegram.tsbuildinfo",
+    "rootDir": "src",
+    "outDir": "dist",
+    "tsBuildInfoFile": "dist/tsconfig.tsbuildinfo",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "types": [
-      "node"
-    ],
-    "strictPropertyInitialization": false
+    "strictPropertyInitialization": false,
+    "baseUrl": "../../",
+    "paths": {
+      "@barfinex/types": [
+        "node_modules/@barfinex/types/dist"
+      ]
+    }
   },
   "include": [
-    "src"
+    "src/**/*.ts"
   ],
   "exclude": [
     "node_modules",
     "dist",
     "**/*.spec.ts",
     "**/*.test.ts"
-  ]
+  ],
 }
