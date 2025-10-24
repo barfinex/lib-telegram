@@ -67,5 +67,8 @@
     "branches": [
       "main"
     ]
+  },
+  "dependencies": {
+    "@barfinex/types": "latest"
   }
 }
