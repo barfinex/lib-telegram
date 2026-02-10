@@ -261,11 +261,11 @@ export interface TelegramMessage {
   /**
    * _Optional._ For text messages, special entities like usernames, URLs, bot commands, etc. that appear in the text
    */
-  entities?: TelegramMessageEntity[];
+  // entities?: TelegramMessageEntity[];
   /**
    * _Optional._ For messages with a caption, special entities like usernames, URLs, bot commands, etc. that appear in the caption
    */
-  caption_entities?: TelegramMessageEntity[];
+  // caption_entities?: TelegramMessageEntity[];
   /**
    * _Optional._ Message is an audio file, information about the file
    */
@@ -406,31 +406,31 @@ export interface TelegramMessage {
 /**
  * This object represents one special entity in a text message. For example, hashtags, usernames, URLs, etc.
  */
-export interface TelegramMessageEntity {
-  /**
-   * Type of the entity.
-   * Can be mention (@username), hashtag, cashtag, bot_command, url, email, phone_number, bold (bold text),
-   * italic (italic text), code (monowidth string), pre (monowidth block),
-   * text_link (for clickable text URLs), text_mention (for users [without usernames](https://telegram.org/blog/edit#new-mentions))
-   */
-  type: string;
-  /**
-   * Offset in UTF-16 code units to the start of the entity
-   */
-  offset: number;
-  /**
-   * Length of the entity in UTF-16 code units
-   */
-  length: number;
-  /**
-   * _Optional._ For “text_link” only, url that will be opened after user taps on the text
-   */
-  url?: string;
-  /**
-   * _Optional._ For “text_mention” only, the mentioned user
-   */
-  user?: TelegramUser;
-}
+// export interface TelegramMessageEntity {
+//   /**
+//    * Type of the entity.
+//    * Can be mention (@username), hashtag, cashtag, bot_command, url, email, phone_number, bold (bold text),
+//    * italic (italic text), code (monowidth string), pre (monowidth block),
+//    * text_link (for clickable text URLs), text_mention (for users [without usernames](https://telegram.org/blog/edit#new-mentions))
+//    */
+//   type: string;
+//   /**
+//    * Offset in UTF-16 code units to the start of the entity
+//    */
+//   offset: number;
+//   /**
+//    * Length of the entity in UTF-16 code units
+//    */
+//   length: number;
+//   /**
+//    * _Optional._ For “text_link” only, url that will be opened after user taps on the text
+//    */
+//   url?: string;
+//   /**
+//    * _Optional._ For “text_mention” only, the mentioned user
+//    */
+//   user?: TelegramUser;
+// }
 
 /**
  * This object represents one size of a photo or a [file](https://core.telegram.org/bots/api#document) /
@@ -1776,7 +1776,7 @@ export interface TelegramGame {
   /**
    * _Optional._ Special entities that appear in text, such as usernames, URLs, bot commands, etc.
    */
-  text_entities?: TelegramMessageEntity[];
+  // text_entities?: TelegramMessageEntity[];
   /**
    * _Optional._ Animation that will be displayed in the game message in chats. Upload via [BotFather](https://t.me/botfather)
    */
