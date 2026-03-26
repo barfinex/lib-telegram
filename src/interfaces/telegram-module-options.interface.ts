@@ -10,7 +10,6 @@ export interface TelegramOptionsFactory {
     | TelegramModuleOptions;
 }
 
-
 export interface TelegramModuleAsyncOptions
   extends Pick<ModuleMetadata, 'imports'> {
   useExisting?: Type<TelegramOptionsFactory>;

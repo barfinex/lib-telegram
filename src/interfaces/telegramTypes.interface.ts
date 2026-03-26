@@ -2669,7 +2669,7 @@ export interface TelegramPromoteChatMemberParams
   can_promote_members?: boolean;
 }
 
-export interface TelegramExportChatInviteLinkParams extends TelegramChatId {}
+export type TelegramExportChatInviteLinkParams = TelegramChatId;
 
 export interface TelegramSetChatPhotoParams extends TelegramChatId {
   /**
@@ -2678,7 +2678,7 @@ export interface TelegramSetChatPhotoParams extends TelegramChatId {
   photo: Buffer;
 }
 
-export interface TelegramDeleteChatPhotoParams extends TelegramChatId {}
+export type TelegramDeleteChatPhotoParams = TelegramChatId;
 
 export interface TelegramSetChatTitleParams extends TelegramChatId {
   /***
@@ -2713,13 +2713,13 @@ export interface TelegramUnpinChatMessageParams extends TelegramChatId {
   message_id: number;
 }
 
-export interface TelegramLeaveChatParams extends TelegramChatId {}
+export type TelegramLeaveChatParams = TelegramChatId;
 
-export interface TelegramGetChatParams extends TelegramChatId {}
+export type TelegramGetChatParams = TelegramChatId;
 
-export interface TelegramGetChatAdministratorsParams extends TelegramChatId {}
+export type TelegramGetChatAdministratorsParams = TelegramChatId;
 
-export interface TelegramGetChatMembersCountParams extends TelegramChatId {}
+export type TelegramGetChatMembersCountParams = TelegramChatId;
 
 export interface TelegramGetChatMemberParams extends TelegramChatId {
   /**
@@ -2735,7 +2735,7 @@ export interface TelegramSetChatStickerSetParams extends TelegramChatId {
   sticker_set_name: string;
 }
 
-export interface TelegramChatDeleteStickerSetParams extends TelegramChatId {}
+export type TelegramChatDeleteStickerSetParams = TelegramChatId;
 
 export interface TelegramAnswerCallbackQueryParams {
   /**
